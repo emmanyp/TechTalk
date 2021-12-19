@@ -7,7 +7,7 @@ const JobCard=(props) =>{
   return(
 <div className="card-container">
   <div className="card">
-  <p className="card-title">{props.job.name}</p>
+  <p className="card-title"> Job Title: {props.job.name}</p>
   <p className="card-content">{props.job.company.name}</p>
   <p className="card-content">{props.job.levels[0].name}</p>
   <p className="card-content"> Published Date:{props.job.publication_date}</p>
