@@ -1,6 +1,7 @@
 import React from 'react'
 
 const PostCard = (props) => {
+  console.log(props);
   return (
     <div className="post-card">
 
@@ -8,6 +9,7 @@ const PostCard = (props) => {
 
       <div className="text">
         <p>{props.post.text}</p>
+        <h1>{props.user.name}</h1>
       </div>
       <div className="comment-dropdown"></div>
     </div>

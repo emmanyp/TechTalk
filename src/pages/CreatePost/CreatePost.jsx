@@ -15,9 +15,7 @@ import { createPost } from '../../services/postService'
     text: text, 
     added_by: props.user.profile, 
   }
-
   const handleCreatePost = async (e) => {
-    e.preventDefault()
     try {
       const newPost = await createPost(formData)
       console.log(newPost) 
