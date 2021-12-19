@@ -4,6 +4,6 @@ import { decodeUserFromToken, checkAuth } from '../middleware/auth.js'
 
 const router = Router()
 
-router.get('/', checkAuth, jobsCtrl.index)
+router.get('/', jobsCtrl.index)
 
 export {router}

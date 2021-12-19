@@ -7,8 +7,7 @@ import PostForm from './PostForm'
 //Services
 import { createPost } from '../../services/postService'
 
-const CreatePost = (props) => {
-  console.log("hello",props)
+  const CreatePost = (props) => {
   const navigate = useNavigate()
   const [text, setText] = useState('')
 
@@ -33,9 +32,9 @@ const CreatePost = (props) => {
       <PostForm 
         text={text}
         setText={setText}
-
         handleCreatePost={handleCreatePost}
       />
+
     </div>
   )
 }

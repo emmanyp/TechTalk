@@ -9,9 +9,7 @@ const PostCard = (props) => {
       <div className="text">
         <p>{props.post.text}</p>
       </div>
-
       <div className="comment-dropdown"></div>
-
     </div>
   )
 }

@@ -2,7 +2,7 @@ import axios from 'axios';
 const key = process.env.API_KEY
 
 const page = 1
-const category = 'Design'
+const category = ['IT', 'software']
 
 async function index(req, res) {
   try {
@@ -13,8 +13,6 @@ async function index(req, res) {
     return res.status(500).json(err)
   }
 }
-
-
 
 export { 
   index,
