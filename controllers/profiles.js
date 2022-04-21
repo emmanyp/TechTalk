@@ -89,6 +89,20 @@ const addFriend = async (req, res) => {
 }
 
 
+const unaddFriend = async (req, res) => {
+  try{
+    const myProfile = await Profile.findById(req.user.profile)
+    let updatedFriends = myProfile.friends.filter(f => `${f}`.includes(req.params.id)=== false)
+    myProfile.friends = updatedFriends
+    await myProfile.save()
+    return res.status(200).json(myProfile)
+
+  }catch(err) {
+    res.status(500).json(err)
+  }
+}
+
+
 
 export { 
   index,
@@ -97,5 +111,6 @@ export {
   update,
   deleteTodo as delete,
   addFriend,
-  updateProfile
+  updateProfile,
+  unaddFriend
 }
