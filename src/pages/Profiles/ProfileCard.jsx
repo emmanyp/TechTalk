@@ -3,9 +3,16 @@ import ProfileAction from './ProfileAction'
 
 const ProfileCard = (props) => {
   const[isFriend, setIsFriend] = useState(props.myFriends.includes(props.profileId))
+  
   const handleCheck=()=>{
-    props.handleAddFriend(props.profile)
-    setIsFriend(true)
+    if(isFriend){
+      props.handleUnaddFriend(props.profile)
+      setIsFriend(false)
+    }else{
+      props.handleAddFriend(props.profile)
+      setIsFriend(true)
+    }
+
   }
 
 const isMe = props.user.includes(props.profileId)
@@ -15,7 +22,11 @@ const isMe = props.user.includes(props.profileId)
       <div className="card">
         <img className="card-img" src={props.img} alt={props.name}  />
         <p className="card-title">{props.name}</p>
-        {isFriend ? <button className='profile-button'><i class="far fa-check-square"></i></button> : isMe ? <button className='profile-button'></button> :
+        {isFriend ? 
+          <button className='profile-button'><i class="far fa-check-square" onClick={()=> handleCheck()}></i></button> 
+          : isMe ? 
+            <button className='profile-button'></button> 
+          :
         <ProfileAction onClick={()=> handleCheck()}/>  }
       </div>
     </div>

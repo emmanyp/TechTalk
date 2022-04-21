@@ -23,6 +23,19 @@ export const addFriend = async (profile) => {
   }
 }
 
+export const UnaddFriend = async (profile) => {
+  try {
+    const res = await fetch(`${BASE_URL}/friends/${profile}`, {
+      method: "PATCH",
+      headers: { 'Authorization': 'Bearer ' + tokenService.getToken() },
+    })
+    const data = await res.json()
+    return data
+  } catch (error) {
+    throw error
+  }
+}
+
 async function profileInfo(Id) {
   try {
     const res = await fetch(`${BASE_URL}/${Id}`,{

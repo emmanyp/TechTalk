@@ -9,10 +9,15 @@ const Profiles = (props) => {
   const handleAddFriend= async(ele)=>{
       await profileService.addFriend(ele._id)
   }
+  const handleUnaddFriend= async(ele)=>{
+    await profileService.UnaddFriend(ele._id)
+}
+
   useEffect(()=>{
     profileService.getAllProfiles()
     .then(profiles => setProfiles(profiles))
   },[])
+
   const profileList = profiles.map((ele, idx)=> {
     return (
       <>
@@ -25,6 +30,7 @@ const Profiles = (props) => {
           setProfiles={setProfiles}
           myFriends={myProfile.friends}
           handleAddFriend={handleAddFriend}
+          handleUnaddFriend={handleUnaddFriend}
           profile={ele}
           />
         </>
