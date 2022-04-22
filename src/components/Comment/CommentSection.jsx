@@ -32,11 +32,11 @@ const handleDeleteComment = async (commentId) => {
       <div className="header">
         <div className="header-buttons"></div>
       </div>
+      <CommentList comments={comments}
+      handleDeleteComment={handleDeleteComment} />
       <CreateComment {...props}
       handleCreateComment={handleCreateComment}
       />
-      <CommentList comments={comments}
-      handleDeleteComment={handleDeleteComment} />
     </div>
   )
 }
