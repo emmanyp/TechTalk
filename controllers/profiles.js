@@ -65,7 +65,9 @@ const update = async (req, res) => {
     const idx = updatedProfile.todos.findIndex(
       (todo) => todo._id.equals(req.params.todoId)
     )
-    updatedProfile.todos[idx].completed = true
+    updatedProfile.todos[idx].completed === false ? 
+    updatedProfile.todos[idx].completed = true : 
+    updatedProfile.todos[idx].completed=false
 
     await updatedProfile.save()
     return res.status(200).json(updatedProfile)
