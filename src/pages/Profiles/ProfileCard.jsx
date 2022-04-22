@@ -1,21 +1,39 @@
 import React, {useState}from 'react'
+import { useNavigate } from 'react-router-dom'
 import ProfileAction from './ProfileAction'
 
 const ProfileCard = (props) => {
+  const navigate = useNavigate()
   const[isFriend, setIsFriend] = useState(props.myFriends.includes(props.profileId))
+  
   const handleCheck=()=>{
-    props.handleAddFriend(props.profile)
-    setIsFriend(true)
+    if(isFriend){
+      props.handleUnaddFriend(props.profile)
+      setIsFriend(false)
+    }else{
+      props.handleAddFriend(props.profile)
+      setIsFriend(true)
+    }
+  }
+  const handleClick = () => {
+    if ( isFriend) {
+      props.setProfileUser(props.profile);
+      navigate("/profiles/:id")
+    }
   }
 
 const isMe = props.user.includes(props.profileId)
 
   return(
-    <div className="card-container">
-      <div className="card">
+    <div className="card-container" >
+      <div className="card" onClick={() => handleClick()}>
         <img className="card-img" src={props.img} alt={props.name}  />
         <p className="card-title">{props.name}</p>
-        {isFriend ? <button className='profile-button'><i class="far fa-check-square"></i></button> : isMe ? <button className='profile-button'></button> :
+        {isFriend ? 
+          <button className='profile-button'><i class="far fa-check-square" onClick={()=> handleCheck()}></i></button> 
+          : isMe ? 
+            <button className='profile-button'></button> 
+          :
         <ProfileAction onClick={()=> handleCheck()}/>  }
       </div>
     </div>

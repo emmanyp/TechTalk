@@ -13,6 +13,7 @@ import ProfileInfo from './pages/ProfileInfo/ProfileInfo'
 const App = () => {
   const [user, setUser] = useState(authService.getUser())
   const navigate = useNavigate()
+  const [profileUser, setProfileUser] = useState(user)
 
   const handleLogout = () => {
     authService.logout()
@@ -24,9 +25,10 @@ const App = () => {
     setUser(authService.getUser())
   }
 
+
   return (
     <>
-      <NavBar user={user} handleLogout={handleLogout} />
+      <NavBar user={user} handleLogout={handleLogout} setProfileUser={setProfileUser} />
       <Routes>
         <Route path="/" element={<Landing user={user} />} />
         <Route
@@ -39,7 +41,7 @@ const App = () => {
         />
         <Route
           path="/profiles"
-          element={user ? <Profiles user={user}/> : <Navigate to="/login" />}
+          element={user ? <Profiles user={user} setProfileUser={setProfileUser}/> : <Navigate to="/login" />}
         />
         <Route
           path="/posts"
@@ -51,7 +53,7 @@ const App = () => {
         />
         <Route
           path="/profiles/:id"
-          element={user ? <ProfileInfo user={user}/> : <Navigate to="/login" />}
+          element={user ? <ProfileInfo user={profileUser}/> : <Navigate to="/login" />}
         />
       </Routes>
     </>

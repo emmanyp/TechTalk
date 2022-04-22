@@ -1,7 +1,14 @@
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import logo from '../../assets/images/conversation.png'
 
-const NavBar = ({ user, handleLogout }) => {
+const NavBar = ({ user, handleLogout, setProfileUser}) => {
+  const navigate = useNavigate()
+  const handleClick = () => {
+    setProfileUser(user);
+    navigate("/profiles/:id")
+  }
+
+
   return (
     <>
     <header id="page-header">
@@ -26,7 +33,7 @@ const NavBar = ({ user, handleLogout }) => {
               <li><Link to="/profiles"><i class="fas fa-user-plus"></i> Add Friends</Link></li>
               <li><Link to="/posts"><i class="fas fa-users"></i> My Feed</Link></li>
               <li><Link to="/jobs"><i class="fas fa-info-circle"></i> Jobs</Link></li>
-              <li><Link to="/profiles/:id"><i class="fas fa-user"></i> My Profile</Link></li>
+              <li onClick={() => handleClick()}><i class="fas fa-user"></i> My Profile</li>
               <li><Link to="" onClick={handleLogout}><i class="fas fa-sign-out-alt"></i> Logout</Link></li>
             </>
               :
