@@ -1,7 +1,9 @@
 import React, {useState}from 'react'
+import { useNavigate } from 'react-router-dom'
 import ProfileAction from './ProfileAction'
 
 const ProfileCard = (props) => {
+  const navigate = useNavigate()
   const[isFriend, setIsFriend] = useState(props.myFriends.includes(props.profileId))
   
   const handleCheck=()=>{
@@ -12,14 +14,19 @@ const ProfileCard = (props) => {
       props.handleAddFriend(props.profile)
       setIsFriend(true)
     }
-
+  }
+  const handleClick = () => {
+    if ( isFriend) {
+      props.setProfileUser(props.profile);
+      navigate("/profiles/:id")
+    }
   }
 
 const isMe = props.user.includes(props.profileId)
 
   return(
-    <div className="card-container">
-      <div className="card">
+    <div className="card-container" >
+      <div className="card" onClick={() => handleClick()}>
         <img className="card-img" src={props.img} alt={props.name}  />
         <p className="card-title">{props.name}</p>
         {isFriend ? 

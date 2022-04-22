@@ -22,17 +22,18 @@ const Profiles = (props) => {
     return (
       <>
       <ProfileCard
-          user={props.user.profile}
-          profileId={ele._id}
-          img={ele.avatar}
-          name={ele.name}
-          key={idx}
-          setProfiles={setProfiles}
-          myFriends={myProfile.friends}
-          handleAddFriend={handleAddFriend}
-          handleUnaddFriend={handleUnaddFriend}
-          profile={ele}
-          />
+        user={props.user.profile}
+        profileId={ele._id}
+        img={ele.avatar}
+        name={ele.name}
+        key={idx}
+        setProfiles={setProfiles}
+        myFriends={myProfile.friends}
+        handleAddFriend={handleAddFriend}
+        handleUnaddFriend={handleUnaddFriend}
+        setProfileUser={props.setProfileUser}
+        profile={ele}
+      />
         </>
     )
   })

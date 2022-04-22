@@ -13,11 +13,13 @@ const ProfileInfo = (props) => {
   useEffect(()=>{
     const getProfile = async()=>{
 
-      const profile = await profileService.profileInfo(props.user.profile)
+      const profile = await profileService.profileInfo(props.user.profile ? props.user.profile : props.user._id )
       setMyProfile(profile) 
     }
     getProfile()
-  },[props.user.profile])
+  },[props.user])
+
+  
   return(
       <>
 
