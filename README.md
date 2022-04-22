@@ -38,6 +38,7 @@
   - <a href='https://www.freepik.com'>Flaticon</a>
   - <a href='https://fontawesome.com/'>Font Awesome</a>
   - <a href='https://animate.style/'>Animate CSS</a>
+  - <a href='https://www.themuse.com/developers/api/v2'>The Muse</a>
 
 ## Future Plans:
   - AAU, I would like to see all the friends that I have added in the past. ✅
