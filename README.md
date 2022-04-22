@@ -40,13 +40,13 @@
   - <a href='https://animate.style/'>Animate CSS</a>
 
 ## Future Plans:
-  - AAU, I would like to see all the friends that I have added in the past.
-  - AAU, I would like to remove a friend.
+  - AAU, I would like to see all the friends that I have added in the past. ✅
+  - AAU, I would like to remove a friend.✅
   - AAU, I would like to have search functionality to search through all the profiles.
   - AAU, I would like to be able to edit the item from my to-do list.
   - AAU in My Profile I would like to toggle between My Posts, Saved Jobs, and To-Do
     - AAU, I would like to only see my to-do list and no one else can see my list.
-  - AAU I would like to click on a profile and see that users profile page
+  - AAU I would like to click on a profile and see that users profile page✅
   - AAU, I would like to have an add button that will add the resource into the users profile.
   - Use avatars API
   - AAU I would like to be able to edit my comments.
