@@ -25,12 +25,17 @@ const ProfileInfo = (props) => {
         <ProfileHeader                      
         profile = {currentProfile}
         />
-        <ProfileInfoForm profile={currentProfile} setMyProfile= {setCurrentProfile} />
-        { props.user.profile === currentProfile?._id ?  
-          <ToDoSection 
-            currentProfile={props.currentProfile}
-            profile={currentProfile}
-          />
+        { props.user.profile === currentProfile?._id ? 
+          <>
+            <ProfileInfoForm 
+              profile={currentProfile} 
+              setMyProfile= {setCurrentProfile} 
+            />
+            <ToDoSection 
+              currentProfile={props.currentProfile}
+              profile={currentProfile}
+            />
+          </>
           : 
           ""
         } 

@@ -5,7 +5,7 @@ import '../../assets/css/profiles.css'
 import '../../assets/css/profileInfo.css'
 const Profiles = (props) => {
   const [profiles, setProfiles] = useState([])
-  const myProfile=profiles.find((profile)=> profile._id === props.user.profile)
+  const myProfile = profiles.find((profile)=> profile._id === props.user.profile)
   const handleAddFriend= async(ele)=>{
       await profileService.addFriend(ele._id)
   }

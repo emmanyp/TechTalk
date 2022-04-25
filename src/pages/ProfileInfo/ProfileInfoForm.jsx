@@ -5,23 +5,22 @@ import * as profileService from "../../services/profileService"
 
 const ProfileInfoForm=(props) =>{
   const [formData, setFormData] = useState({
-    bio:"",
-    linkedin:"",
-    github:"",
+    bio: props.profile.bio,
+    linkedin : props.profile.linkedin,
+    github: props.profile.github,
   })
+  
   const handleChange = evt =>{
     setFormData({...formData, [evt.target.name]: evt.target.value})
   }
+
 const handleSubmit = async (e) =>{
   e.preventDefault()
   try {
     const editProfile = await profileService.updateProfile(props.profile._id,formData)
-    //navgate??
     props.setMyProfile(editProfile)
-    setFormData({
-      bio:'',
-      linkedin:'',
-      github:'',
+     setFormData({
+      ...formData, [e.target.name]: e.target.value
     })
   } catch (error) {
     throw error
@@ -38,15 +37,14 @@ const handleSubmit = async (e) =>{
           value={formData.github}
           onChange={handleChange}
         />
-      <input className='linkedin'
-        type="text"
-        name="linkedin"
-        autoComplete='off'
-        placeholder='linkedin'
-        value={formData.linkedin}
-        onChange={handleChange}
-      />
-        
+        <input className='linkedin'
+          type="text"
+          name="linkedin"
+          autoComplete='off'
+          placeholder='linkedin'
+          value={formData.linkedin}
+          onChange={handleChange}
+        />
         <input className='bio-2'
           type="text"
           name="bio"
