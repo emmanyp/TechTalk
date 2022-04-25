@@ -25,14 +25,14 @@
   
 
 ## Technologies Used: 
-* Express
-* React
-* JavaScript
-* Node.js
-* MongoDB/Mongoose
-* HTML
-* CSS
-
+  ![Express Badge](https://img.shields.io/badge/Express-000?logo=express&logoColor=fff&style=for-the-badge)
+  ![React Badge](https://img.shields.io/badge/React-61DAFB?logo=react&logoColor=000&style=for-the-badge)
+  ![JavaScript Badge](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=000&style=for-the-badge)
+  ![Node.js Badge](https://img.shields.io/badge/Node.js-393?logo=nodedotjs&logoColor=fff&style=for-the-badge)
+  ![MongoDB Badge](https://img.shields.io/badge/MongoDB-47A248?logo=mongodb&logoColor=fff&style=for-the-badge)
+  ![HTML5 Badge](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=fff&style=for-the-badge)
+  ![CSS3 Badge](https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=fff&style=for-the-badge)
+  
 ## Credits:
   - <a href='https://fonts.google.com/specimen/Slabo+27px?category=Serif,Sans+Serif,Display&stylecount=1&width=6'>Google Fonts</a>
   - <a href='https://www.freepik.com'>Flaticon</a>
