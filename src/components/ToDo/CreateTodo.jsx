@@ -5,7 +5,7 @@ const CreateTodo = (props) => {
 
   const formData = {
     todo_text: text,
-    created_by: props.user.profile
+    created_by: props.currentProfile.profile
   }
 
   const handleSubmit = (e) => {

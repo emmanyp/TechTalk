@@ -8,32 +8,37 @@ import ProfileInfoForm from "./ProfileInfoForm"
 
 
 const ProfileInfo = (props) => {
-  const [myProfile, setMyProfile] = useState({})
+  const [currentProfile, setCurrentProfile] = useState({})
 
   useEffect(()=>{
     const getProfile = async()=>{
 
-      const profile = await profileService.profileInfo(props.user.profile ? props.user.profile : props.user._id )
-      setMyProfile(profile) 
+      const profile = await profileService.profileInfo(props.currentProfile.profile ? props.currentProfile.profile : props.currentProfile._id )
+      setCurrentProfile(profile) 
     }
     getProfile()
-  },[props.user])
+  },[props.currentProfile])
 
   
   return(
       <>
-
         <ProfileHeader                      
-        user={props.user}
-        profile = {myProfile}
+        profile = {currentProfile}
         />
-        <ProfileInfoForm profile={myProfile} setMyProfile= {setMyProfile} />
-        {myProfile &&
-        <ToDoSection 
-        user={props.user}
-        profile={myProfile}
-        />
-        }
+        { props.user.profile === currentProfile?._id ? 
+          <>
+            <ProfileInfoForm 
+              profile={currentProfile} 
+              setMyProfile= {setCurrentProfile} 
+            />
+            <ToDoSection 
+              currentProfile={props.currentProfile}
+              profile={currentProfile}
+            />
+          </>
+          : 
+          ""
+        } 
       </>
       
   )
