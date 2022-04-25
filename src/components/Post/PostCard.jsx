@@ -13,7 +13,6 @@ const PostCard = (props) => {
     setBoolean(false)
     :
     setBoolean(true)
-    return
   }
 
   const handleComment = ()=> {
@@ -21,7 +20,6 @@ const PostCard = (props) => {
     setCommentBoolean(false)
     :
     setCommentBoolean(true)
-    return
   }
 
   return (
