@@ -37,7 +37,7 @@ const Landing = ({ user }) => {
         </div>
       </div>
 
-    <a href="https://github.com/emmanyp/TechTalk"><button class="btn">GitHub</button></a>
+        <a href="https://github.com/emmanyp/TechTalk" target="_blank" rel="noreferrer"><button class="btn">GitHub</button></a>
     </div>
 
     </main>
