@@ -21,6 +21,7 @@ const EditPost = (props) => {
       setText({
         text:''
       })
+      props.setBoolean(false)
       props.handleUpdatePost(editPost)
     } catch (error) {
       throw error
