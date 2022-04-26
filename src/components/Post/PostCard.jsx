@@ -35,18 +35,17 @@ const PostCard = (props) => {
           :''
         }
       </div>
-
-      <div className="post-text">
-        <p id="pTag">{props.post.text}</p>
-      </div>
-      
       {boolean ? 
         <EditPost 
           post={props.post} 
           user={props.user}
           handleUpdatePost={props.handleUpdatePost}
+          setBoolean={setBoolean}
         />
-        :''
+        :
+        <div className="post-text">
+        <p id="pTag">{props.post.text}</p>
+        </div>
       }
 
       <div>
