@@ -26,9 +26,9 @@ const isMe = props.user.includes(props.profileId)
 
   return(
     <div className="card-container" >
-      <div className="card" onClick={() => handleClick()}>
+      <div className="card">
         <img className="card-img" src={props.img} alt={props.name}  />
-        <p className="card-title">{props.name}</p>
+        <p className="card-title" onClick={() => handleClick()}>{props.name}</p>
         {isFriend ? 
           <button className='profile-button'><i class="far fa-check-square" onClick={()=> handleCheck()}></i></button> 
           : isMe ? 
